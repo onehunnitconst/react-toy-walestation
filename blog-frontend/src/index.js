@@ -9,12 +9,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer, { rootSaga } from './modules/index';
+import logger from 'redux-logger';
 import { check, tempSetUser } from './modules/user';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(sagaMiddleware))
+  composeWithDevTools(applyMiddleware(sagaMiddleware, logger))
 );
 
 function loadUser() {
