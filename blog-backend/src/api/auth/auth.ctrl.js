@@ -23,7 +23,7 @@ exports.register = async ctx => {
         const exists = await User.findByUsername(username);
         if (exists) {
             ctx.status = 409;
-            return;
+            return; 
         }
 
         const user = new User({

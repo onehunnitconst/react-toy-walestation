@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from './Button';
 import Responsive from './Responsive';
@@ -41,7 +42,7 @@ const Header = ({ user, onLogout }) => {
             <HeaderBlock>
                 <Wrapper>
                     <div className="logo">
-                        W A L E S T A T I O N
+                        <Link to="/">W A L E S T A T I O N</Link>
                     </div>
                     {user ? (
                         <div className="right">
